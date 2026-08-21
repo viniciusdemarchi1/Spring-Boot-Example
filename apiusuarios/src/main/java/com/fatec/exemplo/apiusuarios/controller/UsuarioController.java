@@ -1,5 +1,6 @@
 package com.fatec.exemplo.apiusuarios.controller;
 
+import com.fatec.exemplo.apiusuarios.model.Cliente;
 import com.fatec.exemplo.apiusuarios.model.Usuario;
 import com.fatec.exemplo.apiusuarios.service.Usuarioservice;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,8 @@ public class UsuarioController {
         service.deletar(id);
     }
 
-
+    @GetMapping("/usuario/buscar")
+    public List<Usuario> buscarPorNome(@RequestParam String nome) {
+        return service.buscarPorNomeUsuario(nome);
+    }
 }

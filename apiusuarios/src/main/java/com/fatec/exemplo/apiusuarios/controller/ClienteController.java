@@ -33,4 +33,12 @@ public class ClienteController {
         service.deletar(id);
     }
 
+
+    @GetMapping("/cliente/buscar")
+    public List<Cliente> buscarPorNome(@RequestParam String nome) {
+      return service.buscarPorNome(nome);
+    }
+
+
+
 }

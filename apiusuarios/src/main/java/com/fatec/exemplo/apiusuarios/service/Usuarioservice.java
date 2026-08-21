@@ -4,6 +4,8 @@ import com.fatec.exemplo.apiusuarios.model.Usuario;
 import com.fatec.exemplo.apiusuarios.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -23,6 +25,13 @@ import java.util.List;
         }
         public void deletar(Long id){
             repository.deleteById(id);
+        }
+
+
+
+        @GetMapping("usuarios/buscar")
+        public List<Usuario> buscarPorNomeUsuario(@RequestParam String nome) {
+            return repository.findByNome(nome);
         }
     }
 

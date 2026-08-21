@@ -6,7 +6,9 @@ import com.fatec.exemplo.apiusuarios.model.Usuario;
 import com.fatec.exemplo.apiusuarios.repository.ClienteRepository;
 import com.fatec.exemplo.apiusuarios.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -26,4 +28,10 @@ public class ClienteService {
     public void deletar(Long id){
         repository.deleteById(id);
     }
-}
+
+
+    public List<Cliente> buscarPorNome(String nome) {
+        return repository.findByNome(nome);
+    }
+    }
+
