@@ -34,8 +34,13 @@ public class UsuarioController {
         service.deletar(id);
     }
 
-    @GetMapping("/usuario/buscar")
+    @GetMapping("/buscar")
     public List<Usuario> buscarPorNome(@RequestParam String nome) {
+        return service.buscarPorNomeUsuario(nome);
+    }
+
+    @GetMapping("/usuario/contendo")
+    public List<Usuario> buscarPorNomeUsuarioContendo(@RequestParam String nome) {
         return service.buscarPorNomeUsuario(nome);
     }
 }
