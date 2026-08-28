@@ -33,5 +33,19 @@ public class ClienteService {
     public List<Cliente> buscarPorNome(String nome) {
         return repository.findByNome(nome);
     }
+
+    public List<Cliente> contendoPorNomeCliente(String nome) {
+        return repository.findByNomeContaining(nome);
+
+    }
+
+    public List<Cliente> greater(Long codCliente){
+        return repository.findBycodClienteGreaterThan(codCliente);
+    }
+
+    public List<Cliente> buscarPorLess(Long codCliente){
+        return repository.findBycodClienteLessThan(codCliente);
+    }
+
     }
 

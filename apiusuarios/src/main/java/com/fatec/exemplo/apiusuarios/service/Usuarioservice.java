@@ -35,8 +35,8 @@ import java.util.List;
         }
 
 
-        @GetMapping("usuarios/contendo")
-        public List<Usuario> contendoPorNomeUsuario(@RequestParam String nome) {
+
+        public List<Usuario> contendoPorNomeUsuario(String nome) {
             return repository.findByNomeContaining(nome);
         }
     }

@@ -39,5 +39,20 @@ public class ClienteController {
       return service.buscarPorNome(nome);
     }
 
+    @GetMapping("/cliente/contendo")
+    public List<Cliente> buscarPorNomeClienteContendo(@RequestParam String nome) {
+        return service.contendoPorNomeCliente(nome);
+    }
 
-}
+
+    @GetMapping("/cliente/greater")
+    public List<Cliente> clienteGreater(@RequestParam Long codCliente) {
+        return service.greater(codCliente);
+    }
+
+    @GetMapping("/cliente/less")
+        public List<Cliente> clienteLess(@RequestParam Long codCliente) {
+        return service.buscarPorLess(codCliente);
+        }
+    }
+

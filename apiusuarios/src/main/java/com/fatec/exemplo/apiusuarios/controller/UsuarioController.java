@@ -41,6 +41,6 @@ public class UsuarioController {
 
     @GetMapping("/usuario/contendo")
     public List<Usuario> buscarPorNomeUsuarioContendo(@RequestParam String nome) {
-        return service.buscarPorNomeUsuario(nome);
+        return service.contendoPorNomeUsuario(nome);
     }
-}
+    }
