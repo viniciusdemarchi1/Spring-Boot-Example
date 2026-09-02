@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Cadastro de Usuario</h1>
+<form th:action="@{/web/usuario/salvar}" th:object="${usuario}" method="post">
+    <label>Nome</label>
+    <input type="text" th:field="*{nome}">
+
+    <label>E-mail</label>
+    <input type="email" th:field="*{email}">
+
+    <label>Idade</label>
+    <input type="number" th:field="*{idade}">
+
+    <button type="submit">Salvar</button>
+</form>
+</body>
+</html>
