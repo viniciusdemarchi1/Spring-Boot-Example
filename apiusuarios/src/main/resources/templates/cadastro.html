@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Cadastro de Usuario</h1>
-<form th:action="@{/web/usuario/salvar}" th:object="${usuario}" method="post">
+<form th:action="@{/web/usuarios/salvar}" th:object="${usuario}" method="post">
     <label>Nome</label>
     <input type="text" th:field="*{nome}">
 

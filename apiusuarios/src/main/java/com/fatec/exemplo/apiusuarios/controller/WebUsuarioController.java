@@ -20,7 +20,7 @@ public class WebUsuarioController {
     private Usuarioservice usuarioservice;
 
 
-    @GetMapping("web/novo")
+    @GetMapping("/novo")
     public String mostrarFormulario(Model model) {
         model.addAttribute("usuario", new Usuario());
         return "cadastro";
@@ -29,6 +29,6 @@ public class WebUsuarioController {
     @PostMapping("/salvar")
     public String salvar(@ModelAttribute Usuario usuario) {
         usuarioservice.salvar(usuario);
-        return "redirect:/web/usuarios/lista";
+        return "cadastro";
     }
 }
