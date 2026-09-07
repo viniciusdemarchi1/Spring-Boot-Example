@@ -1,6 +1,7 @@
 package com.fatec.exemplo.apiusuarios.model;
 import jakarta.annotation.Generated;
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -14,13 +15,22 @@ public class Cliente {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codCliente;
 
+   @DateTimeFormat(pattern = "yyyy-MM-dd")
    private Date data_Nascimento;
    private String rg;
    private String cpf;
    private String nome;
    private String email;
    private String telefone;
+   private int idade;
 
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
 
     public Long getCodCliente() {
         return codCliente;

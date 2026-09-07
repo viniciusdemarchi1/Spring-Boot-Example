@@ -8,16 +8,30 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Cadastro de Usuario</h1>
-<form th:action="@{/web/usuarios/salvar}" th:object="${usuario}" method="post">
+
+
+<h1>Cadastro de Cliente</h1>
+<form th:action="@{/web/clientes/salvar}" th:object="${cliente}" method="post">
     <label>Nome</label>
     <input type="text" th:field="*{nome}">
 
     <label>E-mail</label>
     <input type="email" th:field="*{email}">
 
+    <label>Telefone</label>
+    <input type="tel" th:field="*{telefone}">
+
     <label>Idade</label>
     <input type="number" th:field="*{idade}">
+
+    <label>RG</label>
+    <input type="text" th:field="*{rg}">
+
+    <label>CPF</label>
+    <input type="text" th:field="*{cpf}">
+
+    <label>DATA DE NASCIMENTO</label>
+    <input type="date" th:field="*{data_Nascimento}">
 
     <button type="submit">Salvar</button>
 
