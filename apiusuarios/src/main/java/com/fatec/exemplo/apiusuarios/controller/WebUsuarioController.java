@@ -31,4 +31,11 @@ public class WebUsuarioController {
         usuarioservice.salvar(usuario);
         return "cadastro";
     }
+
+
+    @GetMapping("/lista")
+    public String listar(Model model) {
+        model.addAttribute("usuarios", usuarioservice.listarTodos());
+        return "lista";
+    }
 }
