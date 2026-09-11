@@ -6,13 +6,12 @@ import com.fatec.exemplo.apiusuarios.service.Usuarioservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
-@RequestMapping("web/usuarios")
+@RequestMapping("/web/usuarios")
 
 public class WebUsuarioController {
 
@@ -34,8 +33,11 @@ public class WebUsuarioController {
 
 
     @GetMapping("/lista")
-    public String listar(Model model) {
-        model.addAttribute("usuarios", usuarioservice.listarTodos());
+    public String listar(@RequestParam(required = false) String nome, Model model) {
+        List<Usuario> usuarios = (nome == null || nome.isEmpty())
+                ? usuarioservice.listarTodos()
+                : usuarioservice.contendoPorNomeUsuario(nome);
+        model.addAttribute("usuarios", usuarios);
         return "lista";
     }
 }
