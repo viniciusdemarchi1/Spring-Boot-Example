@@ -8,6 +8,10 @@
     <title>Document</title>
 </head>
 <body>
+<form th:action="@{/web/clientes/lista}" method="get">
+    <input type="text" name="nome" placeholder="Buscar por nome">
+    <button type="submit">Buscar</button>
+
 <h1>Lista Clientes</h1>
 <table border="1">
     <tr>
@@ -39,5 +43,6 @@
 
 
 </table>
+</form>
 </body>
 </html>
