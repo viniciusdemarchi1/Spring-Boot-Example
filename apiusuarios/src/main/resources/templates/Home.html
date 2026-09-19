@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body>
+<h1>MENU</h1>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Cadastros</th>
+        <th>Consultas</th>
+    </tr>
+    <tr>
+        <td><a th:href="@{/web/usuarios/novo}">Usuário</a></td>
+        <td><a th:href="@{/web/usuarios/lista}">Usuário - todos / nome</a></td>
+    </tr>
+    <tr>
+        <td><a th:href="@{/web/clientes/novo}">Cliente</a></td>
+        <td><a th:href="@{/web/clientes/lista}">Cliente - todos / nome</a></td>
+    </tr>
+    <tr>
+        <td><a th:href="@{/web/produtos/novo}">Produto</a></td>
+        <td><a th:href="@{/web/produtos/lista}">Produto - todos / nome / preço</a></td>
+    </tr>
+</table>
+</body>
+</html>
